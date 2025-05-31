@@ -1,0 +1,68 @@
+# Docker aliases
+alias d='docker'
+alias di='docker images'
+alias dps='docker ps'
+alias dpsa='docker ps -a'
+alias drm='docker rm'
+alias drmi='docker rmi'
+alias dex='docker exec -it'
+alias dlogs='docker logs -f'
+alias dprune='docker system prune -af'
+alias dstop='docker stop'
+alias dstart='docker start'
+alias drestart='docker restart'
+
+# Docker Compose aliases
+alias dc='docker-compose'
+alias dcu='docker-compose up'
+alias dcud='docker-compose up -d'
+alias dcd='docker-compose down'
+alias dcr='docker-compose restart'
+alias dcl='docker-compose logs -f'
+alias dcp='docker-compose pull'
+alias dcb='docker-compose build'
+alias dcps='docker-compose ps'
+
+# Additional useful Docker commands
+alias dclean='docker rm $(docker ps -aq)'  # Remove all containers
+alias dcleanf='docker rm -f $(docker ps -aq)'  # Force remove all containers
+alias dcleanv='docker volume rm $(docker volume ls -q)'  # Remove all volumes
+alias dcleani='docker rmi $(docker images -q)'  # Remove all images
+
+# Docker network commands
+alias dnetls='docker network ls'
+alias dnetinspect='docker network inspect'
+alias dnetprune='docker network prune'
+
+# Kubernetes aliases
+alias k='kubectl'
+alias kgp='kubectl get pods'
+alias kgpa='kubectl get pods --all-namespaces'
+alias kgd='kubectl get deployments'
+alias kgs='kubectl get services'
+alias kgn='kubectl get nodes'
+alias kgns='kubectl get namespaces'
+alias kdp='kubectl describe pod'
+alias kdd='kubectl describe deployment'
+alias kds='kubectl describe service'
+alias kdn='kubectl describe node'
+alias kl='kubectl logs -f'
+alias kex='kubectl exec -it'
+alias kaf='kubectl apply -f'
+alias kdf='kubectl delete -f'
+alias krm='kubectl delete'
+alias kroll='kubectl rollout restart deployment'
+alias krollh='kubectl rollout history deployment'
+alias krollu='kubectl rollout undo deployment'
+
+# Kubernetes context and namespace management
+alias kgc='kubectl config get-contexts'
+alias kuc='kubectl config use-context'
+alias kcc='kubectl config current-context'
+alias kns='kubectl config set-context --current --namespace'
+
+# Kubernetes monitoring and debugging
+alias ktop='kubectl top pods'
+alias ktopn='kubectl top nodes'
+alias kpf='kubectl port-forward'
+alias kevents='kubectl get events --sort-by=.metadata.creationTimestamp' 
