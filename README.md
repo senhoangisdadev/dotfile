@@ -1,29 +1,29 @@
 # Dotfiles - Docker & Kubernetes Alias Collection
 
-Repository này chứa các alias hữu ích cho Docker, Docker Compose và Kubernetes, giúp quản lý container và services dễ dàng hơn trên server.
+This repository contains useful aliases for Docker, Docker Compose, and Kubernetes, making it easier to manage containers and services on your server.
 
-## 🚀 Tính năng
+## 🚀 Features
 
-- Các alias phổ biến cho Docker
-- Các alias phổ biến cho Docker Compose
-- Các alias phổ biến cho Kubernetes (Single Node)
-- Dễ dàng đồng bộ giữa các máy thông qua Git
-- Tiết kiệm thời gian khi làm việc với container trên server
+- Common Docker aliases
+- Common Docker Compose aliases
+- Common Kubernetes aliases (Single Node)
+- Easy synchronization between machines via Git
+- Time-saving container management on servers
 
-## 📋 Các bước cài đặt
+## 📋 Installation Steps
 
-1. Clone repository này về máy local:
+1. Clone this repository to your local machine:
 ```bash
 git clone https://github.com/YOUR_USERNAME/dotfiles.git
 cd dotfiles
 ```
 
-2. Tạo symbolic link từ file alias trong repo đến thư mục home:
+2. Create a symbolic link from the alias file in the repo to your home directory:
 ```bash
 ln -s $(pwd)/.aliases ~/.aliases
 ```
 
-3. Thêm dòng sau vào file `~/.zshrc` hoặc `~/.bashrc`:
+3. Add the following line to your `~/.zshrc` or `~/.bashrc`:
 ```bash
 if [ -f ~/.aliases ]; then
     source ~/.aliases
@@ -32,104 +32,104 @@ fi
 
 4. Reload shell configuration:
 ```bash
-source ~/.zshrc  # nếu dùng zsh
-# hoặc
-source ~/.bashrc # nếu dùng bash
+source ~/.zshrc  # for zsh
+# or
+source ~/.bashrc # for bash
 ```
 
-## 🐳 Danh sách Alias
+## 🐳 Alias List
 
 ### Docker Aliases
 
-| Alias | Command | Mô tả |
-|-------|---------|--------|
-| d | docker | Rút gọn lệnh docker |
-| di | docker images | Liệt kê các images |
-| dps | docker ps | Liệt kê các container đang chạy |
-| dpsa | docker ps -a | Liệt kê tất cả container |
-| drm | docker rm | Xóa container |
-| drmi | docker rmi | Xóa image |
-| dex | docker exec -it | Truy cập vào container |
-| dlogs | docker logs -f | Xem logs của container |
+| Alias | Command | Description |
+|-------|---------|-------------|
+| d | docker | Shorthand for docker command |
+| di | docker images | List all images |
+| dps | docker ps | List running containers |
+| dpsa | docker ps -a | List all containers |
+| drm | docker rm | Remove container |
+| drmi | docker rmi | Remove image |
+| dex | docker exec -it | Access container shell |
+| dlogs | docker logs -f | View container logs |
 
 ### Docker Compose Aliases
 
-| Alias | Command | Mô tả |
-|-------|---------|--------|
-| dc | docker-compose | Rút gọn lệnh docker-compose |
-| dcu | docker-compose up | Khởi động services |
-| dcud | docker-compose up -d | Khởi động services trong background |
-| dcd | docker-compose down | Dừng và xóa containers, networks |
-| dcr | docker-compose restart | Khởi động lại services |
-| dcl | docker-compose logs -f | Xem logs của services |
+| Alias | Command | Description |
+|-------|---------|-------------|
+| dc | docker-compose | Shorthand for docker-compose |
+| dcu | docker-compose up | Start services |
+| dcud | docker-compose up -d | Start services in background |
+| dcd | docker-compose down | Stop and remove containers, networks |
+| dcr | docker-compose restart | Restart services |
+| dcl | docker-compose logs -f | View service logs |
 
 ### Kubernetes Aliases
 
-| Alias | Command | Mô tả |
-|-------|---------|--------|
-| k | kubectl | Rút gọn lệnh kubectl |
-| kgp | kubectl get pods | Xem danh sách pods |
-| kgpa | kubectl get pods --all-namespaces | Xem pods ở tất cả namespaces |
-| kgd | kubectl get deployments | Xem danh sách deployments |
-| kgs | kubectl get services | Xem danh sách services |
-| kgn | kubectl get nodes | Xem danh sách nodes |
-| kgns | kubectl get namespaces | Xem danh sách namespaces |
-| kdp | kubectl describe pod | Xem chi tiết pod |
-| kdd | kubectl describe deployment | Xem chi tiết deployment |
-| kds | kubectl describe service | Xem chi tiết service |
-| kdn | kubectl describe node | Xem chi tiết node |
-| kl | kubectl logs -f | Xem logs của pod |
-| kex | kubectl exec -it | Truy cập vào pod |
-| kaf | kubectl apply -f | Apply resource từ file |
-| kdf | kubectl delete -f | Xóa resource từ file |
-| krm | kubectl delete | Xóa resource |
+| Alias | Command | Description |
+|-------|---------|-------------|
+| k | kubectl | Shorthand for kubectl |
+| kgp | kubectl get pods | View list of pods |
+| kgpa | kubectl get pods --all-namespaces | View pods in all namespaces |
+| kgd | kubectl get deployments | View list of deployments |
+| kgs | kubectl get services | View list of services |
+| kgn | kubectl get nodes | View list of nodes |
+| kgns | kubectl get namespaces | View list of namespaces |
+| kdp | kubectl describe pod | View pod details |
+| kdd | kubectl describe deployment | View deployment details |
+| kds | kubectl describe service | View service details |
+| kdn | kubectl describe node | View node details |
+| kl | kubectl logs -f | View pod logs |
+| kex | kubectl exec -it | Access pod shell |
+| kaf | kubectl apply -f | Apply resource from file |
+| kdf | kubectl delete -f | Delete resource from file |
+| krm | kubectl delete | Delete resource |
 | kroll | kubectl rollout restart deployment | Restart deployment |
-| krollh | kubectl rollout history deployment | Xem lịch sử rollout |
+| krollh | kubectl rollout history deployment | View rollout history |
 | krollu | kubectl rollout undo deployment | Rollback deployment |
 
-#### Quản lý Context và Namespace
+#### Context and Namespace Management
 
-| Alias | Command | Mô tả |
-|-------|---------|--------|
-| kgc | kubectl config get-contexts | Xem danh sách contexts |
-| kuc | kubectl config use-context | Chuyển đổi context |
-| kcc | kubectl config current-context | Xem context hiện tại |
-| kns | kubectl config set-context --current --namespace | Đổi namespace mặc định |
+| Alias | Command | Description |
+|-------|---------|-------------|
+| kgc | kubectl config get-contexts | View list of contexts |
+| kuc | kubectl config use-context | Switch context |
+| kcc | kubectl config current-context | View current context |
+| kns | kubectl config set-context --current --namespace | Change default namespace |
 
-#### Monitoring và Debugging
+#### Monitoring and Debugging
 
-| Alias | Command | Mô tả |
-|-------|---------|--------|
-| ktop | kubectl top pods | Xem tài nguyên của pods |
-| ktopn | kubectl top nodes | Xem tài nguyên của nodes |
-| kpf | kubectl port-forward | Forward port từ pod |
-| kevents | kubectl get events | Xem events được sắp xếp theo thời gian |
+| Alias | Command | Description |
+|-------|---------|-------------|
+| ktop | kubectl top pods | View pod resources |
+| ktopn | kubectl top nodes | View node resources |
+| kpf | kubectl port-forward | Forward port from pod |
+| kevents | kubectl get events | View time-sorted events |
 
-## 📋 Yêu cầu hệ thống
+## 📋 System Requirements
 
-- Docker và Docker Compose đã được cài đặt
-- Kubernetes (kubectl) đã được cài đặt
+- Docker and Docker Compose installed
+- Kubernetes (kubectl) installed
 - Git
 
-## 🔄 Cập nhật và Đồng bộ
+## 🔄 Updates and Synchronization
 
-1. Khi có thay đổi trên local:
+1. When making local changes:
 ```bash
 git add .
 git commit -m "Update aliases"
 git push origin main
 ```
 
-2. Để đồng bộ trên server mới:
+2. To sync on a new server:
 ```bash
 git clone https://github.com/YOUR_USERNAME/dotfiles.git
 cd dotfiles
-# Thực hiện các bước cài đặt như trên
+# Follow installation steps as above
 ```
 
-## 🤝 Đóng góp
+## 🤝 Contributing
 
-Mọi đóng góp đều được chào đón! Hãy tạo pull request để thêm các alias hữu ích khác.
+All contributions are welcome! Please create a pull request to add more useful aliases.
 
 ## 📝 License
 
